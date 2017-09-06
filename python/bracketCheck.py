@@ -4,20 +4,22 @@ openers = ['[', '{', '('];
 closers = [']', '}', ')'];
 
 def isPair(ch1, ch2):
-    ch1 in openers & openers.index(ch1) == closers.index(ch2)
+    return ch1 in openers & (openers.index(ch1) == closers.index(ch2))
 
 def isOpener(ch):
-    openers.index(ch)
+    ch in openers
 
 def isCloser(c):
-    closers.index(ch)
+    ch in closers
 
 list = []
 
 def testBracket(s):
     length = len(s)
     if length % 2 != 0:
-        return False
+        answer = False
+        print(answer);
+        return
 
     for ch in s:
         if (isOpener(ch)):
@@ -25,11 +27,16 @@ def testBracket(s):
         elif len(list) > 0:
             if ( not isPair(list.pop(), ch)):
                 answer = False
+                print(answer)
+                return
         else:
             answer = False
+            print(answer)
+            return
     
     answer = len(list) == 0
     print(answer)
 
 
 testBracket(test1)
+testBracket(test2)
