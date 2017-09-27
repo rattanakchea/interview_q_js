@@ -2,11 +2,20 @@
 <html>
   <head>
     <title>Mocha Tests</title>
-    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+
+    <script>
+      var githubPage = 'rattanakchea.github.io';
+      if (location.host === 'rattanakchea.github.io') {
+        document.write(`<base href="${githubPage}"/interview_q_js/>`);
+      } else {
+        document.write(`<base href="/">`);
+      }
+    </script>
+    <link rel="stylesheet" href="/node_modules/mocha/mocha.css">
   </head>
   <body>
     <div id="mocha"></div>
-    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="/node_modules/mocha/mocha.js"></script>
     <!-- <script src="../node_modules/chai/chai.js"></script> -->
     <script>mocha.setup('bdd')</script>
 
